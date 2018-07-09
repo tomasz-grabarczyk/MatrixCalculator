@@ -94,48 +94,14 @@ class MatrixCalculator extends Variables {
 
     private void multiplyMatrix() {
 
-        if (getNumberOfColumns() == 2) {
-            for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
-                for (int getColumns = 0; getColumns < getNumberOfColumns(); getColumns++) {
-                    System.out.print(
-                                    matrixArray[getRows][0] * matrixSecondArray[0][getColumns] +
-                                    matrixArray[getRows][1] * matrixSecondArray[1][getColumns] + " ");
-                }
-                System.out.println();
+        for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
+            for (int getColumns = 0; getColumns < getNumberOfRows(); getColumns++) {
+                int sumOfNumbers = 0;
+                for (int colIndex = 0; colIndex < getNumberOfColumns(); colIndex++)
+                    sumOfNumbers += matrixArray[getRows][colIndex] * matrixSecondArray[colIndex][getColumns];
+                System.out.print(sumOfNumbers + " ");
             }
-        } if (getNumberOfColumns() == 3) {
-            for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
-                for (int getColumns = 0; getColumns < getNumberOfColumns(); getColumns++) {
-                    System.out.print(
-                                    matrixArray[getRows][0] * matrixSecondArray[0][getColumns] +
-                                    matrixArray[getRows][1] * matrixSecondArray[1][getColumns] +
-                                    matrixArray[getRows][2] * matrixSecondArray[2][getColumns] + " ");
-                }
-                System.out.println();
-            }
-        } if (getNumberOfColumns() == 4) {
-            for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
-                for (int getColumns = 0; getColumns < getNumberOfColumns(); getColumns++) {
-                    System.out.print(
-                                    matrixArray[getRows][0] * matrixSecondArray[0][getColumns] +
-                                    matrixArray[getRows][1] * matrixSecondArray[1][getColumns] +
-                                    matrixArray[getRows][2] * matrixSecondArray[2][getColumns] +
-                                    matrixArray[getRows][3] * matrixSecondArray[3][getColumns] + " ");
-                }
-                System.out.println();
-            }
-        } if (getNumberOfColumns() == 5) {
-            for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
-                for (int getColumns = 0; getColumns < getNumberOfColumns(); getColumns++) {
-                    System.out.print(
-                                    matrixArray[getRows][0] * matrixSecondArray[0][getColumns] +
-                                    matrixArray[getRows][1] * matrixSecondArray[1][getColumns] +
-                                    matrixArray[getRows][2] * matrixSecondArray[2][getColumns] +
-                                    matrixArray[getRows][3] * matrixSecondArray[3][getColumns] +
-                                    matrixArray[getRows][4] * matrixSecondArray[4][getColumns] + " ");
-                }
-                System.out.println();
-            }
+            System.out.println();
         }
     }
 }
