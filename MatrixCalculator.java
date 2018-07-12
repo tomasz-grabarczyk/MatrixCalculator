@@ -8,20 +8,14 @@ class MatrixCalculator extends Variables {
     void askForFirstArray() {
 
         System.out.print("Enter number of columns for 1st matrix: ");
-        int numberOfColumns = getUserInput().nextInt();
+        setNumberOfColumns(getUserInput().nextInt());
         System.out.print("Enter number of rows for 1st matrix: ");
-        int numberOfRows = getUserInput().nextInt();
-
-        setNumberOfColumns(numberOfColumns);
-        setNumberOfRows(numberOfRows);
+        setNumberOfRows(getUserInput().nextInt());
 
         System.out.print("Enter number of columns for 2nd matrix: ");
-        int secondNumberOfColumns = getUserInput().nextInt();
+        setSecondNumberOfColumns(getUserInput().nextInt());
         System.out.print("Enter number of rows for 2nd matrix: ");
-        int secondNumberOfRows = getUserInput().nextInt();
-
-        setSecondNumberOfColumns(secondNumberOfColumns);
-        setSecondNumberOfRows(secondNumberOfRows);
+        setSecondNumberOfRows(getUserInput().nextInt());
 
         getDataForArray();
         printArrays();
@@ -95,10 +89,11 @@ class MatrixCalculator extends Variables {
     private void multiplyMatrix() {
 
         for (int getRows = 0; getRows < getNumberOfRows(); getRows++) {
-            for (int getColumns = 0; getColumns < getNumberOfRows(); getColumns++) {
+            for (int getColumns = 0; getColumns < getNumberOfColumns(); getColumns++) {
                 int sumOfNumbers = 0;
-                for (int colIndex = 0; colIndex < getNumberOfColumns(); colIndex++)
-                    sumOfNumbers += matrixArray[getRows][colIndex] * matrixSecondArray[colIndex][getColumns];
+                for (int columnIndex = 0; columnIndex < getNumberOfColumns(); columnIndex++) {
+                    sumOfNumbers += matrixArray[getRows][columnIndex] * matrixSecondArray[columnIndex][getColumns];
+                }
                 System.out.print(sumOfNumbers + " ");
             }
             System.out.println();
